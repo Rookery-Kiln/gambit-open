@@ -4,21 +4,24 @@
     "module": "esnext",
     "lib": ["ES2023", "DOM"],
     "types": ["vite/client"],
-    "allowArbitraryExtensions": true,
+    //"allowArbitraryExtensions": true,
     "skipLibCheck": true,
+    "strict": true,
+
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "noEmit": true, 
+    "noUncheckedIndexedAccess":true,
 
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    //"erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "pro/game.ts", "pro/moves.ts", "pro/pieces.ts", "pro/validation.ts", "src/ui/board.ts", "pro/ui/controls.ts", "pro/ui/render.ts", "pro/counter.ts", "pro/ui/pieces.ts"]
 }
