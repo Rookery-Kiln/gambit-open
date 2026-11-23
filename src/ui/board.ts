@@ -26,7 +26,7 @@ function createPiece(piece:Piece):HTMLSpanElement{
     return element;
 }
 
-export function renderBoard( board:Board,container:HTMLElement):void{
+export function renderBoard( board:Board,container:HTMLElement,selectedIndex:number | null= null):void{
     container.innerHTML="";
 
     for(let index = 0;index <64;index++){
@@ -34,17 +34,22 @@ export function renderBoard( board:Board,container:HTMLElement):void{
         const row = Math.floor(index/8);
         const col=index % 8
 
-        const isLight=(row + col)%2 === 1;
+        const isLight=(row + col) %2 === 0;
 
         square.className=`square ${isLight ? "lignt" : "dark"}`;
         square.type = "button";
-        square.dataset.index=String();
+        square.dataset.index=String(index);//remove index incase of bugs connected to this line
 
         const piece=board[index]
         if(piece){
             square.appendChild(createPiece(piece));
         }
         container.appendChild(square)
+
+        if(index === selectedIndex){
+            square.classList.add("selected");
+        }
+      
     }
 }
 

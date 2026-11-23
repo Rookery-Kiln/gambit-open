@@ -55,12 +55,21 @@ body{
     min-width: 0;
     aspect-ratio: 1;
     cursor: pointer;
+    justify-content: center;
 }
 .square.light{
     background: #ead5b5;
 }
 .square.dark{
     background: #98704f;
+}
+.square:hover{
+    filter:brightness(0.92);
+}
+.square.selected{
+    background: #d9a441;
+    box-shadow: inset 0 0 0 4px  #f5d58a;
+    filter: none;
 }
 .piece{
     font-family: "segoe UI symbol","DejaVu Sans",serif;
@@ -83,7 +92,7 @@ body{
     outline-offset: -3px;
 }
 
-@media (max-width) {
+@media (max-width:600) {
     .game-cont{
         width: 96vw;
     }    
